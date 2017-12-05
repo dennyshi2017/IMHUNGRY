@@ -1,0 +1,323 @@
+* {
+	box-sizing: border-box;
+}
+
+@font-face{
+	font-family: 'Nexa';
+	src: url("../fonts/Nexa_Book-webfont.woff2");
+	font-weight: 200;
+}
+
+@font-face{
+	font-family: 'Nexa';
+	src: url("../fonts/Nexa_Heavy-webfont.woff2");
+	font-weight: 800;
+}
+
+body{
+	font-family: 'Nexa', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	background-image: url("../img/bg-img.png");
+	background-repeat: repeat;
+	display: flex; 
+    flex-direction: column; 
+    height: 100%; 
+	margin: 0;
+	position: relative;
+}
+
+#bg{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 9;
+	-moz-opacity: 0.7;
+	opacity: .70;
+	filter: alpha(opacity=70);
+
+}
+
+header{
+	width: 85%;
+	margin: 0 auto;
+}
+
+header .logo{
+	color: #e66c6c;
+	font-size: 1.2rem;
+	font-weight: 800;
+	float: left;
+	margin-top: 17px;
+}
+
+header .nav{
+	width: 70%;
+	text-align: right;
+	float: right;
+	font-size: 1.2rem;
+	font-weight: 800;
+}
+
+header::after{
+	content: "";
+	width: 100%;
+	clear: both;
+	display: block;
+}
+
+.nav ul{
+	margin-top: 10px;
+}
+.nav ul li{
+	display: inline-block;
+	list-style: none;
+	margin-right: 20px;
+}
+
+.reg-btn{
+	background-color: white;
+	padding: 5px 20px;
+	border-radius: 10px;
+	border: 2px solid #ccc;
+	font-size: 1.2rem;
+	font-weight: 800;
+}
+
+.store-container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 50px auto;
+  height: 80%;
+}
+
+.label1{
+  margin-top: 50px;
+  color: #8c8a8a;
+  text-align: center;
+ }
+
+.box1{
+	background-color: #f1efef;
+    width: 500px;
+    border: 1px solid #f5f2f2;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.search-store{
+	font-size: 1rem;
+	padding: 15px;
+	margin: 15px;
+	width: 400px;
+    border: 1px solid #a8efee;
+}
+
+.search-store::-webkit-input-placeholder{
+	color: #ccc;
+}
+
+#add-store {
+	display: none;
+    z-index: 10;
+    margin: 49px auto;
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 400px;
+    background-color: #f8fbfb;
+}
+
+#add-store label {
+	font-size: 1rem;
+	color: #888;
+}
+
+#add-store input, .btn-send {
+	font-size: 1.5rem;
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	font-weight: 200;
+	margin-bottom: 10px;
+	width: 90%;
+	transition: background-color .5s linear;
+	background-color: #e0e0e0;
+}
+
+#add-store input:hover {
+	background-color: white;
+}
+
+#add-store form{
+	max-width: 350px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #ccc;
+}
+
+.btn-send {
+	background-color: #2196F3;
+    color: white;
+    font-size: 1rem;
+    padding: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-send:hover {
+	background-color: #4aabf8;
+}
+
+#hintbox{
+	margin: 49px auto;
+	width: 400px;
+	height: 150px;
+	border: 1px solid #f5f2f2;
+	display: none;
+	text-align: center;
+	color: #d0b1b1;
+	font-size: 1.5rem;
+	font-weight: 800;
+	z-index: 10;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: white;
+}
+
+.store{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #ccc;
+  margin: 20px;
+  text-align: center;
+  background: #a9a1a1;
+  box-shadow: 10px 10px 8px #888888;
+  cursor: pointer;
+}
+
+.store:hover{
+	top: -2px;
+}
+
+.store-hint{
+	width: 200px;
+	height: 200px;
+	background-color: black;
+	visibility: hidden;
+	position: absolute;
+	left: 105%;
+	top: 50%;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    z-index: 1;
+    margin-top: -100px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.store img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  	opacity: 0.6; 
+    z-index: 1;
+}
+
+.store img:hover{
+	opacity: 1; 
+}
+
+.store h2{
+	margin: 64px;
+	position: relative;
+	color: #fff;
+	z-index: 2;
+}
+
+.store h3{
+	color: #fff;
+	position: relative;
+	z-index: 2;
+}
+
+.execStore{
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+	background-color: #5f5e5e;
+	opacity: 0.6;
+	display: none
+}
+
+.btn-execStore {
+	background-color: #2196F3;
+    color: white;
+    font-size: 0.8rem;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+	border: 1px solid #ccc;
+	margin: 2px 10%
+}
+
+#pages{
+	width: 90%;
+	text-align: right;
+	margin-bottom: 100px;
+}
+
+.page-btn{
+	font-size: 1rem;
+	background-color: white;
+    border: hidden;
+    color: #34bdbb;
+}
+
+footer{
+	color: white;
+	background-color: #4c4a4a;
+	width: 100%;
+	margin-top: auto;
+	opacity: 0.9;
+}
+
+.row{
+	width: 80%;
+	margin: 0 auto;
+}
+
+footer .fonts{
+	float: left;
+	width: 50%;
+	font-size: 1rem;
+	font-weight: 200;
+	vertical-align: middle;
+}
+
+footer .imgs{
+	zoom: 50%;
+	float: right;
+	vertical-align: middle;
+	margin-top: 95px;	
+}
+
+.imgs img{
+	margin-right: 30px;
+}
